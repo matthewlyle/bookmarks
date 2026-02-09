@@ -36,7 +36,7 @@ next-env.d.ts
 # Build cache
 tsconfig.tsbuildinfo
 
-# Cursor
+# LLM
 .mcp.json
 
 # Environment variables
