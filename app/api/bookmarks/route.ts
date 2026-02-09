@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { getBookmarks, createBookmark, findBookmarkByUrl } from "@/lib/storage";
 import { requireAuth } from "@/lib/require-auth";
 import { extractMetadataFromUrl, fetchFaviconAsBase64 } from "@/lib/meta-parser";
-import { removeQueryStringsFromURL } from "@/lib/server-utils";
+
 import { validateUrl } from "@/lib/url-validator";
 import { createBookmarkSchema, parseBody } from "@/lib/validation";
 
@@ -38,7 +38,9 @@ export async function POST(request: NextRequest) {
     const { url, title: providedTitle, categoryId } = parsed.data;
 
     // Remove query strings from URL
-    const cleanUrl = removeQueryStringsFromURL(url);
+    const urlObj = new URL(url);
+    urlObj.search = "";
+    const cleanUrl = urlObj.toString();
 
     // Check for duplicate
     const existing = await findBookmarkByUrl(cleanUrl);
