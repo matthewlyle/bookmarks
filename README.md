@@ -4,6 +4,8 @@ A very simple bookmarking app with a Next.js UI and a Chrome extension. Uses Tur
 
 See my personal implementation at https://bookmarks-dusky.vercel.app/.
 
+![Bookmarks app screenshot](public/screenshot.png)
+
 ## Setup
 
 1. Create a [Turso](https://turso.tech) database
