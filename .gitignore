@@ -38,6 +38,7 @@ tsconfig.tsbuildinfo
 
 # LLM
 .mcp.json
+.cursorignore
 
 # Environment variables
 .env
