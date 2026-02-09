@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Header from "@/components/Header";
 import DockBar from "@/components/DockBar";
-import BookmarksDialogs from "@/components/BookmarksDialogs";
+import BookmarksDialogs from "@/components/dialogs/BookmarksDialogs";
 import { SearchProvider } from "@/lib/SearchContext";
 
 type DockDialogType = "add" | "categories";

@@ -6,7 +6,7 @@ import { Trash2, Pencil, Copy, BookCheck, Bookmark as BookmarkIcon } from "lucid
 import { toast } from "sonner";
 import { deleteBookmark, updateBookmark } from "@/lib/api";
 import { UNDO_DELAY_MS } from "@/lib/constants";
-import EditBookmarkDialog from "@/components/EditBookmarkDialog";
+import EditBookmarkDialog from "@/components/dialogs/EditBookmarkDialog";
 import SwipeableRow, { type SwipeableRowHandle } from "./SwipeableRow";
 import BookmarkContent from "./BookmarkContent";
 import {
