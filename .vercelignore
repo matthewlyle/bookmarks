@@ -1,0 +1,12 @@
+# Local dev / database
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+
+# Extension (not needed for web deployment)
+extension
+
+# Misc
+.DS_Store
+*.log
+.env*.local

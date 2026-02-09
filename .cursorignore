@@ -1,0 +1,19 @@
+# Folders to exclude from AI context/search
+node_modules/
+.dist/
+dist/
+build/
+.out/
+.next/
+.cache/
+coverage/
+.generated/
+
+# Project-specific
+.env*
+.DS_Store
+
+# Vite output
+**/assets/**
+
+

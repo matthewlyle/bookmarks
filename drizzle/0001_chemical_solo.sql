@@ -1,0 +1,1 @@
+ALTER TABLE `bookmarks` ADD `read` integer DEFAULT 0 NOT NULL;

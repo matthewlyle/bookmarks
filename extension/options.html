@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bookmarks Extension Settings</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #fafafa;
+      color: #18181b;
+      padding: 24px;
+      min-width: 400px;
+    }
+
+    h1 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 6px;
+      color: #3f3f46;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px 12px;
+      font-size: 14px;
+      border: 1px solid #e4e4e7;
+      border-radius: 6px;
+      background: white;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #18181b;
+      box-shadow: 0 0 0 3px rgba(24, 24, 27, 0.1);
+    }
+
+    input::placeholder {
+      color: #a1a1aa;
+    }
+
+    .hint {
+      font-size: 12px;
+      color: #71717a;
+      margin-top: 4px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px 16px;
+      font-size: 14px;
+      font-weight: 500;
+      color: white;
+      background: #18181b;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    button:hover {
+      background: #27272a;
+    }
+
+    button:active {
+      background: #3f3f46;
+    }
+
+    .status {
+      margin-top: 12px;
+      padding: 10px 12px;
+      font-size: 13px;
+      border-radius: 6px;
+      display: none;
+    }
+
+    .status.success {
+      display: block;
+      background: #dcfce7;
+      color: #166534;
+    }
+
+    .status.error {
+      display: block;
+      background: #fee2e2;
+      color: #991b1b;
+    }
+  </style>
+</head>
+<body>
+  <h1>Bookmarks Settings</h1>
+  
+  <form id="settings-form">
+    <div class="form-group">
+      <label for="api-url">API URL</label>
+      <input 
+        type="url" 
+        id="api-url" 
+        placeholder="https://your-app.app"
+        required
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="api-key">API Key</label>
+      <input 
+        type="password" 
+        id="api-key" 
+        placeholder="Enter your API secret key"
+        required
+      >
+    </div>
+
+    <button type="submit">Save Settings</button>
+  </form>
+
+  <div id="status" class="status"></div>
+
+  <script src="options.js"></script>
+</body>
+</html>
