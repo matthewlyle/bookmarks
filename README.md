@@ -1,14 +1,8 @@
 # Bookmarks
 
-A personal bookmarking app with a Chrome extension.
+A bookmarking app with a Next.js UI and a Chrome extension. Uses Turso and NextAuth. Feel free to fork if you too are tired of enshittified bookmarking apps. 
 
-## Stack
-
-- Next.js 16 
-- Drizzle ORM + Turso (SQLite)
-- NextAuth.js w/ Google OAuth
-- Tailwind CSS v4
-- Chrome Extension 
+See my personal implementation at https://bookmarks-dusky.vercel.app/.
 
 ## Setup
 
