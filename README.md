@@ -1,6 +1,6 @@
 # Bookmarks
 
-A bookmarking app with a Next.js UI and a Chrome extension. Uses Turso and NextAuth. Feel free to fork if you too are tired of enshittified bookmarking apps. 
+A very simple bookmarking app with a Next.js UI and a Chrome extension. Uses Turso for db and NextAuth for auth. Feel free to fork if you too are tired of enshittified bookmarking apps. 
 
 See my personal implementation at https://bookmarks-dusky.vercel.app/.
 
@@ -18,7 +18,7 @@ pnpm dev
 ```
 ## Customization
 
-**Auth:** NextAuth.js supports many providers. Swap `Google` for `GitHub`, `Discord`, etc. in `auth.ts`.
+**Auth:** NextAuth.js supports many providers. Swap `Google` for `GitHub`, `Discord`, etc. in `auth.ts` and update your secrets.
 
 **Database:** Uses Drizzle ORM with Turso (SQLite). To use a different database, update `lib/db/index.ts`, `lib/db/schema.ts`, `lib/env.ts`, and `drizzle.config.ts`.
 
