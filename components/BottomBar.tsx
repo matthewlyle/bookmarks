@@ -8,12 +8,12 @@ import Link from "next/link";
 import { useSearch } from "@/lib/SearchContext";
 import { cn } from "@/lib/utils";
 
-interface DockBarProps {
+interface BottomBarProps {
   onOpenAdd: () => void;
   onOpenCategories: () => void;
 }
 
-interface DockNavButtonProps {
+interface NavButtonProps {
   label: string;
   icon: LucideIcon;
   href: string;
@@ -21,7 +21,7 @@ interface DockNavButtonProps {
   onClick?: () => void;
 }
 
-function DockNavButton({ label, icon: Icon, href, className, onClick }: DockNavButtonProps) {
+function NavButton({ label, icon: Icon, href, className, onClick }: NavButtonProps) {
   return (
     <motion.span whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.99 }} className="inline-flex">
       <Link
@@ -39,14 +39,14 @@ function DockNavButton({ label, icon: Icon, href, className, onClick }: DockNavB
   );
 }
 
-interface DockActionButtonProps {
+interface ActionButtonProps {
   label: string;
   icon: LucideIcon;
   onClick: () => void;
   className?: string;
 }
 
-function DockActionButton({ label, icon: Icon, onClick, className }: DockActionButtonProps) {
+function ActionButton({ label, icon: Icon, onClick, className }: ActionButtonProps) {
   return (
     <motion.button
       type="button"
@@ -64,7 +64,7 @@ function DockActionButton({ label, icon: Icon, onClick, className }: DockActionB
   );
 }
 
-export default function DockBar({ onOpenAdd, onOpenCategories }: DockBarProps) {
+export default function BottomBar({ onOpenAdd, onOpenCategories }: BottomBarProps) {
   const { status } = useSession();
   const { setSelectedCategoryId } = useSearch();
   const prefersReducedMotion = useReducedMotion();
@@ -80,26 +80,26 @@ export default function DockBar({ onOpenAdd, onOpenCategories }: DockBarProps) {
         style={{ willChange: prefersReducedMotion ? "auto" : "transform" }}
       >
         <div className="flex items-center justify-center border-t border-border bg-card shadow-lg" role="toolbar" aria-label="Main toolbar">
-            <DockNavButton label="Go to home" icon={Home} href="/" onClick={() => {
+            <NavButton label="Go to home" icon={Home} href="/" onClick={() => {
               setSelectedCategoryId(null);
             }} />
             {isAuthenticated && (
-              <DockActionButton
+              <ActionButton
                 label="Add bookmark"
                 icon={Plus}
                 onClick={onOpenAdd}
               />
             )}
-            <DockActionButton
+            <ActionButton
               label="Browse categories"
               icon={FolderOpen}
               onClick={onOpenCategories}
               className="md:hidden"
             />
             {isAuthenticated ? (
-              <DockNavButton label="Settings" icon={Settings} href="/settings" />
+              <NavButton label="Settings" icon={Settings} href="/settings" />
             ) : (
-              <DockNavButton label="Sign in" icon={LogIn} href="/auth" />
+              <NavButton label="Sign in" icon={LogIn} href="/auth" />
             )}
         </div>
       </motion.div>
