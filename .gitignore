@@ -33,6 +33,12 @@ next-env.d.ts
 *.sln
 *.sw?
 
+# Build cache
+tsconfig.tsbuildinfo
+
+# Cursor
+.mcp.json
+
 # Environment variables
 .env
 .env.local
