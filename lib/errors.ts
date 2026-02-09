@@ -35,16 +35,6 @@ export class ValidationError extends AppError {
 }
 
 /**
- * Error thrown when a resource already exists.
- */
-export class ConflictError extends AppError {
-  constructor(message: string) {
-    super(message, "CONFLICT");
-    this.name = "ConflictError";
-  }
-}
-
-/**
  * Error thrown when a database operation fails.
  */
 export class DatabaseError extends AppError {
