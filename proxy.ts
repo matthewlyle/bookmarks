@@ -16,7 +16,8 @@ export const proxy = auth((req) => {
   // API routes: GET allowed without auth; write methods require session or API key
   if (isApiRoute) {
     const method = req.method ?? "GET"
-    if (method === "GET" || method === "OPTIONS") return
+    const isReadOnly = method === "GET"
+    if (isReadOnly) return
 
     const apiKey = req.headers.get("x-api-key")
     if (apiKey === process.env.API_SECRET_KEY) return
